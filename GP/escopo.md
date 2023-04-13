@@ -16,40 +16,40 @@
 
 ### Objetivos
 
-- O projeto tem por objetivo...
+- Definição do que se pretende com o projeto.
 
 ### Justificativa
 
-- O projeto tem por objetivo...
+- Definição do que motiva a realização do projeto.
 
 ### Fatores de sucesso
 
-- O projeto tem por objetivo...
+- O que o projeto precisará ter para ser considerado bem sucedido.
 
 ### Restrições
 
-- O projeto tem por objetivo...
+- Definição dos fatores que limitarão o desenvolvimento do projeto.
 
 ### Premissas
 
-- O projeto tem por objetivo...
+- Pressupostos que são declarados em relação ao projeto.
 
 ### Exclusões específicas
 
-- O projeto tem por objetivo...
+- Descrição do que não será feito no projeto.
 
 ### Entregas principais
 
-- O projeto tem por objetivo...
+- Descrição do que será feito no projeto.
 
 ### Orçamento previsto
 
-- O projeto tem por objetivo...
+- Valor estimado que será alocado no projeto.
 
 ### Marcos principais
 
-- O projeto tem por objetivo...
+- Previsão das etapas principais do projeto, com suas datas previstas de conclusão.
 
 ### Critérios de aceitação do projeto
 
-- O projeto tem por objetivo...
+- O que o projeto precisa cumprir para ser considerado aceitável.
