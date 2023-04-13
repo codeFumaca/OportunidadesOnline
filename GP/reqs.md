@@ -18,126 +18,126 @@ Alguns requisitos básicos e necessários para o funcionamento do projeto:
  
  <tr align="center">
     <td>
-      <b>Frameworks</b>
+      Frameworks
     </td>
   <td>
-      <b>Técnico</b>
+      Técnico
     </td>
   <td>
-      <b>Baixa</b>
+      Baixa
     </td>
   </tr>
   <tr align="center">
     <td>
-      <b>Filtragem</b>
+      Filtragem
     </td>
   <td>
-      <b>Funcionalidade</b>
+      Funcionalidade
     </td>
   <td>
-      <b>Baixa</b>
+      Baixa
     </td>
   </tr>
   <tr align="center">
     <td>
-      <b>Computador</b>
+      Computador
     </td>
   <td>
-      <b>Financeiro</b>
+      Financeiro
     </td>
   <td>
-      <b>Média</b>
+      Média
     </td>
   </tr>
   <tr align="center">
     <td>
-      <b>Perfil de Usuário</b>
+      Perfil de Usuário
     </td>
   <td>
-      <b>Funcionalidade</b>
+      Funcionalidade
     </td>
   <td>
-      <b>Média</b>
+      Média
     </td>
   </tr>
   <tr align="center">
     <td>
-      <b>Registro e Login</b>
+      Registro e Login
     </td>
   <td>
-      <b>Funcionalidade</b>
+      Funcionalidade
     </td>
   <td>
-      <b>Média</b>
+      Média
     </td>
   </tr>
   <tr align="center">
     <td>
-      <b>Usabilidade do Sistema</b>
+      Usabilidade do Sistema
     </td>
   <td>
-      <b>Técnico</b>
+      Técnico
     </td>
   <td>
-      <b>Média</b>
+      Média
     </td>
   </tr>
   <tr align="center">
     <td>
-      <b>Pesquisa e Publicação</b>
+      Pesquisa e Publicação
     </td>
   <td>
-      <b>Funcionalidade</b>
+      Funcionalidade
     </td>
   <td>
-      <b>Média</b>
+      Média
     </td>
   </tr>
   
    
   <tr align="center">
     <td>
-      <b>Segurança do Website</b>
+      Segurança do Website
     </td>
   <td>
-      <b>Técnico</b>
+      Técnico
     </td>
   <td>
-      <b>Alta</b>
+      Alta
     </td>
   </tr>
   
   <tr align="center">
     <td>
-      <b>Servidor Web</b>
+      Servidor Web
     </td>
   <td>
-      <b>Financeiro</b>
+      Financeiro
     </td>
   <td>
-      <b>Alta</b>
+      Alta
     </td>
   </tr>
   <tr align="center">
     <td>
-      <b>Banco de Dados</b>
+      Banco de Dados
     </td>
   <td>
-      <b>Técnico</b>
+      Técnico
     </td>
   <td>
-      <b>Alta</b>
+      Alta
     </td>
   </tr>
   <tr align="center">
     <td>
-      <b>Linguagem de programação</b>
+      Linguagem de programação
     </td>
   <td>
-      <b>Técnico</b>
+      Técnico
     </td>
   <td>
-      <b>Alta</b>
+      Alta
     </td>
   </tr>
 </table>
