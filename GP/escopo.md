@@ -8,15 +8,15 @@
 
 ### Patrocinadores
 
-- Sassasasa
+- Idealizadores do projeto.
 
 ### Colaboradores
 
-- Agradecemos às seguintes pessoas que contribuíram para este projeto:
+- Programadores.
 
 ### Objetivos
 
-- Definição do que se pretende com o projeto.
+- Diminuir a taxa de desemprego no país.
 
 ### Justificativa
 
@@ -24,15 +24,15 @@
 
 ### Fatores de sucesso
 
-- O que o projeto precisará ter para ser considerado bem sucedido.
+- Cumprir todo os objetivos.
 
 ### Restrições
 
-- Definição dos fatores que limitarão o desenvolvimento do projeto.
+- Falta de conhecimento.
 
 ### Premissas
 
-- Pressupostos que são declarados em relação ao projeto.
+- 
 
 ### Exclusões específicas
 
@@ -44,7 +44,7 @@
 
 ### Orçamento previsto
 
-- Valor estimado que será alocado no projeto.
+- R$ 0,00
 
 ### Marcos principais
 
@@ -52,4 +52,4 @@
 
 ### Critérios de aceitação do projeto
 
-- O que o projeto precisa cumprir para ser considerado aceitável.
+- Atingir certo número de usuários cadastrados e ativos,
