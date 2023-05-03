@@ -1,6 +1,6 @@
 # ProjetoES2023.1
 
-> ProjetoES2023.1 é um projeto para avaliação nas matérias de Engenharia de Software I, Programação WEB e Gerencia de Projetos.
+> ProjetoES2023.1 é um projeto para avaliação nas matérias de Engenharia de Software I, Programação WEB, Gerencia de Projetos e Banco de Dados I.
 
 ## 🔧 Ajustes e melhorias
 
