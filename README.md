@@ -13,7 +13,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 ## 📫 Contribuindo para ProjetoES2023.1
 
-Para contribuir com ProjetoES2023.1, siga estas etapas:
+Para contribuir com OportunidadesOnline, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
