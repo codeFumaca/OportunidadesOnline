@@ -1,6 +1,6 @@
-# ProjetoES2023.1
+# OportunidadesOnline
 
-> ProjetoES2023.1 é um projeto para avaliação nas matérias de Engenharia de Software I, Programação WEB, Gerencia de Projetos e Banco de Dados I.
+> OportunidadesOnline é um projeto para avaliação nas matérias de Engenharia de Software I, Programação WEB, Gerencia de Projetos e Banco de Dados I.
 
 ## 🔧 Ajustes e melhorias
 
