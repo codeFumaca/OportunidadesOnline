@@ -3,7 +3,7 @@
 ### 1. Gerenciamento do projeto
 
 - Planejamento
-  - Definição do escopo[^1]
+  - Definição do Escopo[^1]
   - Cronograma
   - Definição de recursos necessário
 
@@ -45,38 +45,37 @@
 
 - Testes de Funcionalidade
   - Verificar se todas as funcionalidades estão operando como planejado
-  - Reparar determinada funcionalidade caso seja necessário
+  - Corrigir possíveis erros
 
 - Testes de Usabilidade
-  - Apurar o nível de usabilidade do sistema
-  - Averiguar a curva de aprendizagem, e se necessário, buscar a diminuição da mesma
+    - Apurar o nível de usabilidade do sistema
+    - Averiguar a curva de aprendizagem, e se necessário, diminui-lá
+    - Avaliar clareza das informações e eficiência geral do site
 
 - Testes de Segurança
-  - Levantar 
-  - 
+  - Identificar possíveis vulnerabilidades
+  - Implementar medidas de proteção
+
 ### 6. Implantação do site
 
-  - Implantação 1
-    - ...
-  - Implantação 2
-  - Implantação 3
+  - Configuração do Servidor
+  - Instalação do Site
+  - Testes de Implantação
 
 ### 7. Treinamento e documentação
 
-  - Treinamento 1
-    - ...
-  - Treinamento 2
-  - Documentação 3
+  - Treinamento de Usuários
+  - Treinamento de Administradores
+  - Documentação do Site
 
 ### 8. Suporte e manutenção
 
-  - Suporte 1
-    - ...
-  - Suporte 2
-  - Manutenção 3
+  - Suporte ao Usuário
+  - Manutenção Corretiva
+  - Manutenção Preventiva
 
-[^1]: Escopo
-[^2]: WireFrame
-[^3]: Front-End
-[^4]: Back-End
-[^5]: Um banco de dados é uma coleção organizada de informações - ou dados - estruturadas, normalmente armazenadas eletronicamente em um sistema de computador.
+[^1]: O Escopo de um projeto é o conjunto de metas, objetivos, entregas e limites que define a extensão e o propósito do trabalho a ser realizado. Ele serve como um guia para as partes envolvidas no projeto, delineando as atividades a serem realizadas e as metas a serem alcançadas. O escopo estabelece as fronteiras do projeto, identificando o que está incluído e excluído, e ajuda a garantir que as funções e responsabilidades sejam executadas corretamente pelos envolvidos.
+[^2]: WireFrame é um esboço visual básico de um site (ou qualquer outro produto digital). Ele é usado para presentar a estrutura inicial e layout do site, podendo ser modificada ao decorrer do projeto à medida que são feitas iterações e melhorias.
+[^3]: Front-End é a parte responsável pela interação direta com o usuário final, responsável pela apresentação exibindo conteúdo de forma visualmente atraente e permitindo a interação dos usuários com o sistema.
+[^4]: Back-End é a parte responsável pela parte do sistema que os usuários não veem, que lida com o processamento de dados, que interage com o banco de dados, gerencia e processa as informações recebidas do Front-End e entrega respostas apropiadas.
+[^5]: Um Banco de Dados é uma coleção organizada de informações que armazena grande quantidades de dados, que permite uma facil consulta, recuperação, manipulação e gerenciamento de dados de maneira rápida e segura.
