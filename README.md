@@ -7,18 +7,18 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Levantamento de Requistos
-- [ ] Criação do Banco de Dados
-- [ ] Front-END
-- [ ] Back-END
+- [ ] Criação doCriação do Banco de Dados
+- [ ] Criação do Front-END
+- [ ] Criação do Back-END
 
-## 📫 Contribuindo para ProjetoES2023.1
+## 📫 Contribuindo para OportunidadesOnline
 
 Para contribuir com OportunidadesOnline, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
 3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin OxieVida / <local>`
+4. Envie para o branch original: `git push origin OportunidadesOnline / <local>`
 5. Crie a solicitação de pull.
 
 Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
