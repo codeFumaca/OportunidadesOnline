@@ -1,3 +1,22 @@
+
+## Usuários 👤
+<table>
+  <tr>
+    <th align="center">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" width="100px;"/><br>
+    <th align="center">
+        <img src="https://w7.pngwing.com/pngs/359/413/png-transparent-chief-executive-computer-icons-fatmawati-city-center-others-white-company-hand.png" width="100px;"/><br>
+  </tr>
+  <tr>
+    <td align="center">
+      Usuário
+    </td>
+     <td align="center">
+      Empresas
+    </td>
+  </tr>
+</table>
+
 ## 🤝 Colaboradores
 
 <table>
