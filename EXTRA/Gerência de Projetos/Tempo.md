@@ -24,9 +24,9 @@
       <th>Documentação de Requisitos</th>
     </tr>
     <tr>
-      <td align="center">Aguardo</td>
+      <td align="center">3 dias</td>
       <td align="center">1 dia</td>
-      <td align="center">Aguardo</td>
+      <td align="center">7 dias</td>
     </tr>
   </table>
   
@@ -71,7 +71,7 @@
     <tr>
       <td align="center">2 dias</td>
       <td align="center">2 dias</td>
-      <td align="center">Profisisonal</td>
+      <td align="center">Contínuo</td>
     </tr>
   </table>
 
