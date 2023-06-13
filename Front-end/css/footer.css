@@ -1,0 +1,39 @@
+.footer-info img{
+    width: 5rem;
+    height: 3rem;
+}
+
+.footer-main{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.footer-main {
+    background-color: white;
+    color: #fff;
+    padding: 5rem;
+    width: 100vw;
+    height:50%;
+  }
+
+  .footer-main div {
+    margin-left: 5rem;
+  }
+  
+  .footer-main h3 {
+    font-size: 16px;
+    color: #292D32;
+    
+  }
+  
+  .footer-main h4 {
+    font-size: 14px;
+    color: #292D32;
+    gap: 1rem;
+  }
+  
+  .footer-main strong {
+    font-weight: bold;
+  }
+ 

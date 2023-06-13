@@ -1,0 +1,46 @@
+.about-us-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  }
+
+.about-us-main h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+.about-us-main h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+.about-us-main button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+.about-us-main button:hover {
+    background-color: blue;
+    color: white;
+  }
+  
+.about-us-image {
+    margin-top: 20px;
+    margin-left: 3rem;
+    width: 25rem;
+    height: 25rem;
+  }
+  
+.about-us-image img {
+    width: 100%;
+    max-width: 500px;
+  }
+  
