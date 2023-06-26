@@ -43,9 +43,9 @@ h3.copyright{
 .menu{
     background-color: black;
     position: absolute;
-    width: 15%;
+    width: 10%;
     height: 100%;
-    border-radius: 2rem;
+    border-radius: 1rem;
     top: 0;
     left: 0;
 }
@@ -71,3 +71,36 @@ h3.copyright{
     margin: 0;
 }
 
+.footer-main h3{
+    color: black;
+}
+
+.footer-main div{
+    align-items: center;
+    
+}
+
+.footer-main .copyright{
+    margin: 0;
+
+}
+
+.menu {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.menu .profile div h3{
+    margin-left: 0.5rem;
+}
+
+.menu .profile div h2{
+    margin-left: 0.5rem;
+}
+
+.menu .logout{
+    margin-top: 52rem;
+}
