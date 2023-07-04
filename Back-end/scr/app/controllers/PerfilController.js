@@ -1,30 +1,17 @@
 import connection from "../database/connect.js"
+import perfilRepositories from "../repositories/perfilRepositories.js";
+
 class PerfilController {
 
-    index(req, res) { // Buscar
-        const sql = "SELECT * FROM perfil;"
-        connection.query(sql, (error, result) => {
-            if (error) {
-                console.log(error)
-                res.status(404).json({ 'erro': error })
-            } else {
-                res.status(200).json(result)
-            }
-        })
+    async index(req, res) { // Buscar
+        const result = await perfilRepositories.find()
+        res.json(result)
     }
 
-    show(req, res) { // Buscar por id
-        const id = req.params.id;
-        const sql = `SELECT * FROM perfil WHERE idPerfil=?;`
-        connection.query(sql, id, (error, result) => {
-            const row = result[0]
-            if (error) {
-                console.log(error)
-                res.status(404).json({ 'erro': error })
-            } else {
-                res.status(200).json(row)
-            }
-        })
+    async show(req, res) { // Buscar por id
+        const id = req.params.id
+        const result = await perfilRepositories.findById(id)
+        res.json(result)
     }
 
     showbyname(req, res) { // Buscar por nome
