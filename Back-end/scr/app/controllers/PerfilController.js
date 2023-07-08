@@ -1,5 +1,5 @@
 import connection from "../database/connect.js"
-import perfilRepositories from "../repositories/perfilRepositories.js";
+import perfilRepositories from "../repositories/PerfilRepositories.js";
 
 class PerfilController {
 
@@ -14,58 +14,30 @@ class PerfilController {
         res.json(result)
     }
 
-    showbyname(req, res) { // Buscar por nome
+    async showbyname(req, res) { // Buscar por nome
         const nome = req.params.nome;
-        const sql = `SELECT * FROM perfil WHERE nome=?;`
-        connection.query(sql, nome, (error, result) => {
-            const row = result[0]
-            if (error) {
-                console.log(error)
-                res.status(404).json({ 'erro': error })
-            } else {
-                res.status(200).json(row)
-            }
-        })
+        const result = await perfilRepositories.findByName(nome)
+        res.json(result)
     }
 
-    store(req, res) { // Criar Perfil
+    async store(req, res) { // Criar Perfil
         const perfil = req.body;
-        const sql = `INSERT INTO perfil SET ?;`
-        connection.query(sql, perfil, (error, result) => {
-            if (error) {
-                console.log(error)
-                res.status(400).json({ 'erro': error })
-            } else {
-                res.status(201).json(result)
-            }
-        })
+        const result = await perfilRepositories.create(perfil)
+        res.json(result)
+
     }
 
-    update(req, res) { // Atualizar
+    async update(req, res) { // Atualizar
         const id = req.params.id;
         const perfil = req.body;
-        const sql = `UPDATE perfil SET ? WHERE idPerfil=?;`
-        connection.query(sql, [perfil, id], (error, result) => {
-            if (error) {
-                console.log(error)
-                res.status(404).json({ 'erro': error })
-            } else {
-                res.status(200).json(result)
-            }
-        })
+        const result = await perfilRepositories.update(id, perfil)
+        res.json(result)
     }
 
-    delete(req, res) { // Deletar
+    async delete(req, res) { // Deletar
         const id = req.params.id;
-        const sql = `DELETE FROM perfil WHERE idPerfil=?;`
-        connection.query(sql, id, (error, result) => {
-            if (error) {
-                console.log(error)
-                res.status(404).json({ 'erro': error })
-            } else {
-                res.status(200).json(result)
-            }
-        })
+        const result = await perfilRepositories.delete(id)
+        res.json(result)
     }
 
 }

@@ -12,13 +12,13 @@ connection.connect((erro) => { // Tentar conectar com o servidor
     } else {
         const sqlFilePath = fs.readFile(join('scr', 'app', 'database', 'struct.json'), 'utf-8', (error, data) => {
             if (error) {
-                return console.log("Erro: ", error);
+                return console.log("Erro ao ler o arquivo: ", error);
             } else {
                 const queries = JSON.parse(data)
                 queries.configs.forEach((config) => {
                     connection.query(config.sql, (erro, result) => {
                         if (erro) {
-                            return console.log(`Erro ao definir a configuração no BD. ERRO` + erro)
+                            return console.log(`Erro ao definir a configuração ${config.nome}. ERRO: ` + erro)
                         }
                     })
                 })
@@ -26,7 +26,7 @@ connection.connect((erro) => { // Tentar conectar com o servidor
                 queries.tabelas.forEach((tabela) => {
                     connection.query(tabela.sql, (erro, result) => {
                         if (erro) {
-                            return console.log(`Erro ao iniciar a tabela  ${tabela.nome}. ERRO:` + erro)
+                            return console.log(`Erro ao iniciar a tabela  ${tabela.nome}. ERRO: ` + erro)
                         }
                     })
                 });
