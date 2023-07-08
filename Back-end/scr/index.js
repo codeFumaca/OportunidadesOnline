@@ -24,6 +24,21 @@ app.get('/', (req, res) => { // Página Principal
     })
 });
 
+app.get('/register', (req, res) => { // Página Principal
+
+    const filePath = join('../', 'Front-end', 'register.html');
+
+    fs.readFile(filePath, 'utf-8', (error, data) => {
+        if (error) {
+            console.log('Erro:', error);
+            return res.status(500).send('Erro ao ler o arquivo HTML');
+        }
+
+        res.contentType('html');
+        res.status(200).send(data);
+    })
+});
+
 app.post('/addprofile', PerfilController.store);
 
 app.get('/profiles', PerfilController.index);
