@@ -6,7 +6,6 @@ import { join } from "path";
 const PORT = 3000;
 
 connection.connect((erro) => { // Tentar conectar com o servidor
-    var sql;
     if (erro) {
         console.log('Falha na conexão:' + erro) // Mensagem de falha caso não haja conexão com o banco de dados.
     } else {
@@ -30,9 +29,17 @@ connection.connect((erro) => { // Tentar conectar com o servidor
                         }
                     })
                 });
-                console.log("Tabelas iniciadas com sucesso!") // Mensagem de sucesso ao abrir conexão com o o banco de dados
+                console.log("Tabelas iniciadas com sucesso!")
+                queries.triggers.forEach((trigger) => {
+                    connection.query(trigger.sql, (erro, result) => {
+                        if (erro) {
+                            return console.log(`Erro ao iniciar a trigger  ${trigger.nome}. \nERRO: ` + erro)
+                        }
+                    })
+                });
+                console.log("Triggers iniciados com sucesso!")
                 app.listen(PORT, () => {
-                    console.log(`Servidor rodando na porta ${PORT}`)
+                    console.log(`Servidor rodando na porta ${PORT}`) // Mensagem de sucesso ao abrir conexão com o o banco de dados
                 })
             }
         })

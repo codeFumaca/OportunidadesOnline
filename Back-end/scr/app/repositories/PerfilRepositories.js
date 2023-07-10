@@ -1,4 +1,4 @@
-import connection, { consulta } from "../database/connect.js"
+import { consulta } from "../database/connect.js"
 
 class PerfilRepositories {
 

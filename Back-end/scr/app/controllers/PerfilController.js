@@ -1,4 +1,3 @@
-import connection from "../database/connect.js"
 import perfilRepositories from "../repositories/PerfilRepositories.js";
 
 class PerfilController {

@@ -8,8 +8,8 @@ const app = express()
 app.use(express.json())
 app.use(express.static(join('../', 'Front-end'))); // Ler arquivos css
 
-// ROTAS
-app.get('/', (req, res) => { // Página Principal
+// ROTAS UTILIZADAS PARA FAZER REQUISIÇÕES AO SERVIDOR
+app.get('/', (req, res) => { // SOLICITA OS ARQUIVOS DA PÁGINA INICIAL AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
 
     const filePath = join('../', 'Front-end', 'index.html');
 
@@ -24,7 +24,7 @@ app.get('/', (req, res) => { // Página Principal
     })
 });
 
-app.get('/register', (req, res) => { // Página Principal
+app.get('/register', (req, res) => { // SOLICITA OS ARQUIVOS DA PÁGINA DE REGISTRO AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
 
     const filePath = join('../', 'Front-end', 'register.html');
 
@@ -39,7 +39,7 @@ app.get('/register', (req, res) => { // Página Principal
     })
 });
 
-app.get('/login', (req, res) => { // Página Principal
+app.get('/login', (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE LOGIN AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
 
     const filePath = join('../', 'Front-end', 'login.html');
 
