@@ -4,6 +4,7 @@ import { join } from 'path';
 import ProcuranteController from "../app/controllers/ProcuranteController.js";
 import EmpresaController from "../app/controllers/EmpresaController.js";
 import PerfilController from "../app/controllers/PerfilController.js"
+import ProjetoController from "../app/controllers/ProjetoController.js";
 
 const router = Router()
 
@@ -80,16 +81,16 @@ router.put('/perfis/atualizar/:id', PerfilController.update);
 router.delete('/perfis/delete/:id', PerfilController.delete);
 
 // ROTAS PROJETO
-router.post('/register/perfil', PerfilController.store);
+router.post('/register/projeto', ProjetoController.store);
 
-router.get('/perfis', PerfilController.index);
+router.get('/projetos', ProjetoController.index);
 
-router.get('/perfis/search/id/:id', PerfilController.show);
+router.get('/projeto/search/id/:id', ProjetoController.show);
 
-router.get('/perfis/search/nome/:nome', PerfilController.showbyname);
+router.get('/projeto/search/nome/:nome', ProjetoController.showbyname);
 
-router.put('/perfis/atualizar/:id', PerfilController.update);
+router.put('/projeto/atualizar/:id', ProjetoController.update);
 
-router.delete('/perfis/delete/:id', PerfilController.delete);
+router.delete('/projeto/delete/:id', ProjetoController.delete);
 
 export default router;
