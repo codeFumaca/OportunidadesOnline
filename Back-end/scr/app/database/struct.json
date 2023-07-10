@@ -78,7 +78,11 @@
     "triggers": [
         {
             "nome": "procurante_AFTER_INSERT",
-            "sql": "CREATE TRIGGER procurante_AFTER_INSERT AFTER INSERT on perfil FOR EACH ROW  BEGIN INSERT INTO perfil (login, senha, procurante_id, empresa_id, administrador_id) VALUES (NEW.cpf, 12345,NEW.id, 0,0); END"
+            "sql": "CREATE TRIGGER `bd_oportunidades_online`.`procurante_AFTER_INSERT` AFTER INSERT ON `procurante` FOR EACH ROW BEGIN INSERT INTO perfil (login, senha, procurante_id, empresa_id, administrador_id) VALUES (NEW.cpf, 12345,NEW.id, 0,0); END"
+        },
+        {
+            "nome": "empresa_AFTER_INSERT",
+            "sql": "CREATE TRIGGER `bd_oportunidades_online`.`empresa_AFTER_INSERT` AFTER INSERT ON `empresa` FOR EACH ROW BEGIN INSERT INTO perfil (login, senha, procurante_id, empresa_id, administrador_id) VALUES (NEW.cnpj, 12345,0,NEW.id,0); END "
         }
     ]
 }
