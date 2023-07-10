@@ -29,7 +29,7 @@ class PerfilController {
     async update(req, res) { // Atualizar
         const id = req.params.id;
         const perfil = req.body;
-        const result = await perfilRepositories.update(id, perfil)
+        const result = await perfilRepositories.update(perfil, id)
         res.json(result)
     }
 

@@ -1,65 +1,82 @@
 import { Router } from "express";
 import fs from 'fs';
-import PerfilController from '../app/controllers/PerfilController.js';
+import { join } from 'path';
+import ProcuranteController from "../app/controllers/ProcuranteController.js";
+import EmpresaController from "../app/controllers/EmpresaController.js";
+import PerfilController from "../app/controllers/PerfilController.js"
 
 const router = Router()
 
-// ROTAS UTILIZADAS PARA FAZER REQUISIÇÕES AO SERVIDOR
-router.get('/', (req, res) => { // SOLICITA OS ARQUIVOS DA PÁGINA INICIAL AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
+/**
+ * 
+ * @param {*} res resposta para o requisitor
+ * @param {*} filePath PATH do arquivo HTML
+ */
 
-    const filePath = join('../', 'Front-end', 'index.html');
-
+function sendHtmlFile(res, filePath) {
     fs.readFile(filePath, 'utf-8', (error, data) => {
         if (error) {
             console.log('Erro:', error);
             return res.status(500).send('Erro ao ler o arquivo HTML');
         }
 
-        res.contentType('html');
-        res.status(200).send(data);
-    })
+        res.contentType('html').status(200).send(data);
+    });
+}
+
+// ROTAS UTILIZADAS PARA FAZER REQUISIÇÕES AO SERVIDOR
+router.get('/', (req, res) => { // SOLICITA OS ARQUIVOS DA PÁGINA INICIAL AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
+    const filePath = join('../', 'Front-end', 'index.html');
+    sendHtmlFile(res, filePath);
 });
 
 router.get('/register', (req, res) => { // SOLICITA OS ARQUIVOS DA PÁGINA DE REGISTRO AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
-
     const filePath = join('../', 'Front-end', 'register.html');
-
-    fs.readFile(filePath, 'utf-8', (error, data) => {
-        if (error) {
-            console.log('Erro:', error);
-            return res.status(500).send('Erro ao ler o arquivo HTML');
-        }
-
-        res.contentType('html');
-        res.status(200).send(data);
-    })
+    sendHtmlFile(res, filePath);
 });
 
 router.get('/login', (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE LOGIN AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
-
     const filePath = join('../', 'Front-end', 'login.html');
-
-    fs.readFile(filePath, 'utf-8', (error, data) => {
-        if (error) {
-            console.log('Erro:', error);
-            return res.status(500).send('Erro ao ler o arquivo HTML');
-        }
-
-        res.contentType('html');
-        res.status(200).send(data);
-    })
+    sendHtmlFile(res, filePath);
 });
 
-router.post('/addprofile', PerfilController.store);
+// ROTAS PROCURANTE
+router.post('/register/procurante', ProcuranteController.store);
 
-router.get('/profiles', PerfilController.index);
+router.get('/procurantes', ProcuranteController.index);
 
-router.get('/profiles/search/id/:id', PerfilController.show);
+router.get('/procurantes/search/id/:id', ProcuranteController.show);
 
-router.get('/profiles/search/nome/:nome', PerfilController.showbyname);
+router.get('/procurantes/search/nome/:nome', ProcuranteController.showbyname);
 
-router.put('/profiles/att/:id', PerfilController.update);
+router.put('/procurantes/atualizar/:id', ProcuranteController.update);
 
-router.delete('/profiles/delete/:id', PerfilController.delete);
+router.delete('/procurantes/delete/:id', ProcuranteController.delete);
+
+// ROTAS EMPRESA
+router.post('/register/empresa', EmpresaController.store);
+
+router.get('/empresas', EmpresaController.index);
+
+router.get('/empresas/search/id/:id', EmpresaController.show);
+
+router.get('/empresas/search/nome/:nome', EmpresaController.showbyname);
+
+router.put('/empresas/atualizar/:id', EmpresaController.update);
+
+router.delete('/empresas/delete/:id', EmpresaController.delete);
+
+// ROTAS PERFIL
+router.post('/register/perfil', PerfilController.store);
+
+router.get('/perfis', PerfilController.index);
+
+router.get('/perfis/search/id/:id', PerfilController.show);
+
+router.get('/perfis/search/nome/:nome', PerfilController.showbyname);
+
+router.put('/perfis/atualizar/:id', PerfilController.update);
+
+router.delete('/perfis/delete/:id', PerfilController.delete);
 
 export default router;

@@ -30,14 +30,6 @@ connection.connect((erro) => { // Tentar conectar com o servidor
                     })
                 });
                 console.log("Tabelas iniciadas com sucesso!")
-                queries.triggers.forEach((trigger) => {
-                    connection.query(trigger.sql, (erro, result) => {
-                        if (erro) {
-                            return console.log(`Erro ao iniciar a trigger  ${trigger.nome}. \nERRO: ` + erro)
-                        }
-                    })
-                });
-                console.log("Triggers iniciados com sucesso!")
                 app.listen(PORT, () => {
                     console.log(`Servidor rodando na porta ${PORT}`) // Mensagem de sucesso ao abrir conexão com o o banco de dados
                 })
