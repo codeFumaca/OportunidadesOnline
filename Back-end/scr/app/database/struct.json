@@ -60,7 +60,7 @@
         },
         {
             "nome": "perfil",
-            "sql": "CREATE TABLE IF NOT EXISTS `bd_oportunidades_online`.`perfil` ( `id` INT NOT NULL AUTO_INCREMENT, `imagem` LONGBLOB NULL, `login` VARCHAR(45) NOT NULL, `senha` VARCHAR(45) NOT NULL, `procurante_id` INT NOT NULL, `empresa_id` INT NOT NULL, `administrador_id` INT NOT NULL, PRIMARY KEY (`id`, `procurante_id`, `empresa_id`, `administrador_id`), CONSTRAINT `fk_perfil_procurante1` FOREIGN KEY (`procurante_id`) REFERENCES `bd_oportunidades_online`.`procurante` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION, CONSTRAINT `fk_perfil_empresa1` FOREIGN KEY (`empresa_id`) REFERENCES `bd_oportunidades_online`.`empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION, CONSTRAINT `fk_perfil_administrador1` FOREIGN KEY (`administrador_id`) REFERENCES `bd_oportunidades_online`.`administrador` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) ENGINE = InnoDB"
+            "sql": "CREATE TABLE IF NOT EXISTS `bd_oportunidades_online`.`perfil` ( `id` INT NOT NULL AUTO_INCREMENT, `imagem` LONGBLOB NULL, `login` VARCHAR(45) NOT NULL, `senha` VARCHAR(45) NOT NULL, `procurante_id` INT , `empresa_id` INT, `administrador_id` INT, PRIMARY KEY (`id`), CONSTRAINT `fk_perfil_procurante1` FOREIGN KEY (`procurante_id`) REFERENCES `bd_oportunidades_online`.`procurante` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION, CONSTRAINT `fk_perfil_empresa1` FOREIGN KEY (`empresa_id`) REFERENCES `bd_oportunidades_online`.`empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION, CONSTRAINT `fk_perfil_administrador1` FOREIGN KEY (`administrador_id`) REFERENCES `bd_oportunidades_online`.`administrador` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) ENGINE = InnoDB"
         },
         {
             "nome": "empresa_has_area",

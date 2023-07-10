@@ -1,4 +1,4 @@
-import app from "./scr/index.js";
+import app from "./scr/app.js";
 import connection from "./scr/app/database/connect.js";
 import fs from "fs"
 import { join } from "path";
