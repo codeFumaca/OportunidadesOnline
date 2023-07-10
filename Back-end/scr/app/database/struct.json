@@ -1,8 +1,8 @@
 {
     "configs": [
         {
-            "nome": "Banco de Dados", 
-            "sql":  "CREATE SCHEMA IF NOT EXISTS `bd_oportunidades_online` DEFAULT CHARACTER SET utf8 ;"
+            "nome": "Banco de Dados",
+            "sql": "CREATE SCHEMA IF NOT EXISTS `bd_oportunidades_online` DEFAULT CHARACTER SET utf8 ;"
         },
         {
             "nome": "config 1",
@@ -78,7 +78,7 @@
     "triggers": [
         {
             "nome": "procurante_AFTER_INSERT",
-            "sql": "DROP TRIGGER IF EXISTS `bd_oportunidades_online`.`procurante_AFTER_INSERT`; CREATE DEFINER = CURRENT_USER TRIGGER `bd_oportunidades_online`.`procurante_AFTER_INSERT` AFTER INSERT ON `procurante` FOR EACH ROW BEGIN INSERT INTO perfil (login, senha, procurante_id, empresa_id, administrador_id) VALUES (NEW.cpf, 12345,NEW.id, 0,0); END"
+            "sql": "CREATE TRIGGER procurante_AFTER_INSERT AFTER INSERT on perfil FOR EACH ROW  BEGIN INSERT INTO perfil (login, senha, procurante_id, empresa_id, administrador_id) VALUES (NEW.cpf, 12345,NEW.id, 0,0); END"
         }
     ]
 }
