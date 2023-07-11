@@ -1,10 +1,10 @@
 import { Router } from "express";
-import fs from 'fs';
 import { join } from 'path';
 import ProcuranteController from "../app/controllers/ProcuranteController.js";
 import EmpresaController from "../app/controllers/EmpresaController.js";
 import PerfilController from "../app/controllers/PerfilController.js"
 import ProjetoController from "../app/controllers/ProjetoController.js";
+import { sendHtmlFile } from "../app/functions/sendHtmlFile.js";
 
 const router = Router()
 
@@ -13,17 +13,6 @@ const router = Router()
  * @param {*} res resposta para o requisitor
  * @param {*} filePath PATH do arquivo HTML
  */
-
-function sendHtmlFile(res, filePath) {
-    fs.readFile(filePath, 'utf-8', (error, data) => {
-        if (error) {
-            console.log('Erro:', error);
-            return res.status(500).send('Erro ao ler o arquivo HTML');
-        }
-
-        res.contentType('html').status(200).send(data);
-    });
-}
 
 // ROTAS UTILIZADAS PARA FAZER REQUISIÇÕES AO SERVIDOR
 router.get('/', (req, res) => { // SOLICITA OS ARQUIVOS DA PÁGINA INICIAL AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
