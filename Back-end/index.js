@@ -2,20 +2,9 @@ import app from "./scr/app.js";
 import connection from "./scr/app/database/connect.js";
 import fs from "fs"
 import { join } from "path";
+import { executeQuery } from "./scr/app/functions/executeQuery.js";
 
 const PORT = 3000;
-
-function executeQuery(query) { // Função para percorrer o JSON contendo o banco de dados e aplicar as queries
-    return new Promise((resolve, reject) => {
-        connection.query(query.sql, (erro, result) => {
-            if (erro) {
-                reject(`Erro ao executar a consulta ${query.nome}. ERRO: ${erro}`);
-            } else {
-                resolve();
-            }
-        });
-    });
-}
 
 connection.connect(async (erro) => {
     if (erro) {
@@ -38,7 +27,18 @@ connection.connect(async (erro) => {
             console.log("Tabelas iniciadas com sucesso!");
 
             for (const trigger of queries.triggers) {
-                await executeQuery(trigger);
+                // Verificando se o trigger já existe
+                const checkTriggerQuery = { "sql": ` SELECT trigger_name FROM information_schema.triggers WHERE trigger_schema = 'bd_oportunidades_online' AND trigger_name = '${trigger.nome}'; ` };
+
+                const results = await executeQuery(checkTriggerQuery);
+                if (results.length > 0) {
+                    // O trigger já existe, você pode optar por deixá-lo como está ou excluí-lo antes de criar um novo
+                    console.log('O trigger', trigger.nome, 'já existe.');
+                } else {
+                    // O trigger não existe, pode prosseguir com a criação
+                    await executeQuery(trigger);
+                    console.log('Trigger criado com sucesso:', trigger.nome);
+                }
             }
 
             console.log("Triggers iniciados com sucesso!");

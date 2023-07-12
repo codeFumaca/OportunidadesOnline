@@ -16,17 +16,17 @@ const router = Router()
  */
 
 // ROTAS UTILIZADAS PARA FAZER REQUISIÇÕES AO SERVIDOR
-router.get('/', (req, res) => { // SOLICITA OS ARQUIVOS DA PÁGINA INICIAL AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
+router.get('/', async (req, res) => { // SOLICITA OS ARQUIVOS DA PÁGINA INICIAL AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
     const filePath = join('../', 'Front-end', 'index.html');
     sendHtmlFile(res, filePath);
 });
 
-router.get('/register', (req, res) => { // SOLICITA OS ARQUIVOS DA PÁGINA DE REGISTRO AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
+router.get('/register', async (req, res) => { // SOLICITA OS ARQUIVOS DA PÁGINA DE REGISTRO AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
     const filePath = join('../', 'Front-end', 'register.html');
     sendHtmlFile(res, filePath);
 });
 
-router.get('/login', (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE LOGIN AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
+router.get('/login', async (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE LOGIN AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
     const filePath = join('../', 'Front-end', 'login.html');
     sendHtmlFile(res, filePath);
 });
