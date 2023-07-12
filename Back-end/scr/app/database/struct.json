@@ -60,7 +60,7 @@
         },
         {
             "nome": "perfil",
-            "sql": "CREATE TABLE IF NOT EXISTS `bd_oportunidades_online`.`perfil` ( `id` INT NOT NULL AUTO_INCREMENT, `imagem` LONGBLOB NULL, `login` VARCHAR(45) NOT NULL, `senha` VARCHAR(45) NOT NULL, `procurante_id` INT , `empresa_id` INT, `administrador_id` INT, PRIMARY KEY (`id`), CONSTRAINT `fk_perfil_procurante1` FOREIGN KEY (`procurante_id`) REFERENCES `bd_oportunidades_online`.`procurante` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION, CONSTRAINT `fk_perfil_empresa1` FOREIGN KEY (`empresa_id`) REFERENCES `bd_oportunidades_online`.`empresa` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION, CONSTRAINT `fk_perfil_administrador1` FOREIGN KEY (`administrador_id`) REFERENCES `bd_oportunidades_online`.`administrador` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) ENGINE = InnoDB"
+            "sql": "CREATE TABLE IF NOT EXISTS `bd_oportunidades_online`.`perfil` ( `id` INT NOT NULL AUTO_INCREMENT, `imagem` LONGBLOB NULL, `login` VARCHAR(45) NOT NULL, `senha` VARCHAR(45) NOT NULL, `tipo` ENUM('Empresa', 'Procurante') NOT NULL, `procurante_id` INT NULL, `empresa_id` INT NULL, `administrador_id` INT NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB"
         },
         {
             "nome": "empresa_has_area",
@@ -73,6 +73,16 @@
         {
             "nome": "profissao_has_procurante",
             "sql": "CREATE TABLE IF NOT EXISTS `bd_oportunidades_online`.`profissao_has_procurante` ( `profissao_id` INT NOT NULL, `profissao_area_idarea` INT NOT NULL, `procurante_id` INT NOT NULL, PRIMARY KEY (`profissao_id`, `profissao_area_idarea`, `procurante_id`), CONSTRAINT `fk_profissao_has_procurante_profissao1` FOREIGN KEY (`profissao_id` , `profissao_area_idarea`) REFERENCES `bd_oportunidades_online`.`profissao` (`id` , `area_idarea`) ON DELETE NO ACTION ON UPDATE NO ACTION, CONSTRAINT `fk_profissao_has_procurante_procurante1` FOREIGN KEY (`procurante_id`) REFERENCES `bd_oportunidades_online`.`procurante` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) ENGINE = InnoDB"
+        }
+    ],
+    "triggers": [
+        {
+            "nome": "procurante_AFTER_INSERT",
+            "sql": "CREATE TRIGGER `bd_oportunidades_online`.`procurante_AFTER_INSERT` AFTER INSERT ON `procurante` FOR EACH ROW BEGIN INSERT INTO perfil (imagem ,login, senha,tipo, procurante_id, empresa_id, administrador_id) VALUES (NULL, NEW.cpf, 12345, 'Procurante', NEW.id, 0, 0); END"
+        },
+        {
+            "nome": "empresa_AFTER_INSERT",
+            "sql": "CREATE TRIGGER `bd_oportunidades_online`.`empresa_AFTER_INSERT` AFTER INSERT ON `empresa` FOR EACH ROW BEGIN INSERT INTO perfil (imagem ,login, senha,tipo, procurante_id, empresa_id, administrador_id) VALUES (NULL, NEW.cnpj, 12345, 'Empresa', 0, NEW.id, 0); END "
         }
     ]
 }

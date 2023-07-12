@@ -37,6 +37,12 @@ connection.connect(async (erro) => {
 
             console.log("Tabelas iniciadas com sucesso!");
 
+            for (const trigger of queries.triggers) {
+                await executeQuery(trigger);
+            }
+
+            console.log("Triggers iniciados com sucesso!");
+
             app.listen(PORT, () => {
                 console.log(`Servidor rodando na porta ${PORT}`);
             });

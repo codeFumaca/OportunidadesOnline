@@ -3,8 +3,14 @@ import EmpresaRepositories from "../repositories/EmpresaRepositories.js"
 class EmpresaController {
 
     async index(req, res) { // Buscar
-        const result = await EmpresaRepositories.find()
-        res.json(result)
+        try {
+            const result = await EmpresaRepositories.find()
+            res.status(200).json(result)
+        } catch (erro) {
+            console.log('Message error: ', erro)
+            res.status(400).send({ message: erro.message })
+        }
+
     }
 
     async show(req, res) { // Buscar por id
