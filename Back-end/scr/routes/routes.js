@@ -73,6 +73,8 @@ router.delete('/perfis/delete/:id', PerfilController.delete);
 // ROTAS PROJETO
 router.post('/register/projeto', ProjetoController.store);
 
+router.post('/projeto/link', AreaController.vincularProject)
+
 router.get('/projetos', ProjetoController.index);
 
 router.get('/projeto/search/id/:id', ProjetoController.show);
@@ -85,6 +87,8 @@ router.delete('/projeto/delete/:id', ProjetoController.delete);
 
 // ROTAS AREA
 router.post('/register/area', AreaController.store);
+
+router.post('/area/link/:Eid/:Aid', AreaController.vincularArea)
 
 router.get('/areas', AreaController.index);
 
