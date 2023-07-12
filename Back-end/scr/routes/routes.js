@@ -4,6 +4,7 @@ import ProcuranteController from "../app/controllers/ProcuranteController.js";
 import EmpresaController from "../app/controllers/EmpresaController.js";
 import PerfilController from "../app/controllers/PerfilController.js"
 import ProjetoController from "../app/controllers/ProjetoController.js";
+import AreaController from "../app/controllers/AreaController.js";
 import { sendHtmlFile } from "../app/functions/sendHtmlFile.js";
 
 const router = Router()
@@ -81,5 +82,18 @@ router.get('/projeto/search/nome/:nome', ProjetoController.showbyname);
 router.put('/projeto/atualizar/:id', ProjetoController.update);
 
 router.delete('/projeto/delete/:id', ProjetoController.delete);
+
+// ROTAS AREA
+router.post('/register/area', AreaController.store);
+
+router.get('/areas', AreaController.index);
+
+router.get('/area/search/id/:id', AreaController.show);
+
+router.get('/area/search/nome/:nome', AreaController.showbyname);
+
+router.put('/area/atualizar/:id', AreaController.update);
+
+router.delete('/area/delete/:id', AreaController.delete);
 
 export default router;
