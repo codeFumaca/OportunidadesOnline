@@ -3,6 +3,7 @@ import ProcuranteController from "../app/controllers/ProcuranteController.js";
 
 const router = Router();
 
+// ROTAS PROCURANTE
 router.post('/register/procurante', ProcuranteController.store);
 
 router.get('/procurantes', ProcuranteController.index);

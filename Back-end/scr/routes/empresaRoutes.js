@@ -3,6 +3,7 @@ import EmpresaController from "../app/controllers/EmpresaController.js";
 
 const router = Router();
 
+// ROTAS EMPRESA
 router.post('/register/empresa', EmpresaController.store);
 
 router.post('/projeto/link', EmpresaController.vincularProject)
