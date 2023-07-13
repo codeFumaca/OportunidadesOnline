@@ -2,10 +2,10 @@ import { consulta } from "../database/connect.js"
 
 class PerfilRepositories {
 
-    create(perfil) {
+    /*create(perfil) {
         const sql = `INSERT INTO perfil SET ?;`
         return consulta(sql, perfil, "Erro ao tentar cadastrar um novo perfil")
-    }
+    }*/ // Desnecessário 
     find() {
         const sql = "SELECT * FROM perfil;";
         return consulta(sql, "Não foi possível localizar");

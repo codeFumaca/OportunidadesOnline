@@ -1,19 +1,20 @@
 import { Router } from "express";
 import { join } from 'path';
-import ProcuranteController from "../app/controllers/ProcuranteController.js";
-import EmpresaController from "../app/controllers/EmpresaController.js";
-import PerfilController from "../app/controllers/PerfilController.js"
-import ProjetoController from "../app/controllers/ProjetoController.js";
-import AreaController from "../app/controllers/AreaController.js";
+import { eAdmin } from "../app/middlewares/auth.js";
+import bcrypt from "bcryptjs"
+import jwt from "jsonwebtoken"
+
+//Importando funções
 import { sendHtmlFile } from "../app/functions/sendHtmlFile.js";
 
-const router = Router()
+//Importando arquivos de rotas
+import procuranteRoutes from "./procuranteRoutes.js";
+import empresaRoutes from "./empresaRoutes.js";
+import perfilRoutes from "./perfilRoutes.js"
+import projetoRoutes from "./projetoRoutes.js"
+import areaRoutes from "./areaRoutes.js"
 
-/**
- * 
- * @param {*} res resposta para o requisitor
- * @param {*} filePath PATH do arquivo HTML
- */
+const router = Router()
 
 // ROTAS UTILIZADAS PARA FAZER REQUISIÇÕES AO SERVIDOR
 router.get('/', async (req, res) => { // SOLICITA OS ARQUIVOS DA PÁGINA INICIAL AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
@@ -31,73 +32,54 @@ router.get('/login', async (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE 
     sendHtmlFile(res, filePath);
 });
 
-// ROTAS PROCURANTE
-router.post('/register/procurante', ProcuranteController.store);
+router.get('/dashboard', eAdmin, async (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE LOGIN AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
+    const filePath = join('../', 'Front-end', 'dashboard.html');
+    sendHtmlFile(res, filePath);
+});
 
-router.get('/procurantes', ProcuranteController.index);
+// ROTAS AUTH
+router.post('/auth/registrar', async (req, res) => {
+    const senha = await bcrypt.hash(req.body.senha, 8)
 
-router.get('/procurantes/search/id/:id', ProcuranteController.show);
+    console.log(senha);
+    return res.status(200).json({
+        mensagem: "Tudo ok"
+    })
 
-router.get('/procurantes/search/nome/:nome', ProcuranteController.showbyname);
+})
 
-router.put('/procurantes/atualizar/:id', ProcuranteController.update);
+router.post('/auth/login', async (req, res) => {
+    if (req.body.login != "fakecrazzyy@hotmail.com") {
+        return res.status(400).json({
+            erro: true,
+            mensagem: "Usuário ou senha incorreta"
+        });
+    }
 
-router.delete('/procurantes/delete/:id', ProcuranteController.delete);
+    if (!(await bcrypt.compare(req.body.senha, "$2a$08$hGCtuN8zmNziEPjMhOhsnezC6HVWcPWo0cCyb2vGAdm/CIze7Y4mG"))) {
+        return res.status(400).json({
+            erro: true,
+            mensagem: "Usuário ou senha incorreta"
+        });
+    }
 
-// ROTAS EMPRESA
-router.post('/register/empresa', EmpresaController.store);
+    var token = jwt.sign({id: 1}, "AISNNS3702050SASNO247249241LKISANPPQ", {
+        //expiresIn: 600 // 10 minutos
+        expiresIn: '1d'
+    })
 
-router.get('/empresas', EmpresaController.index);
+    return res.json({
+        erro: false,
+        mensagem: "Login realizado com sucesso!",
+        token
+    })
 
-router.get('/empresas/search/id/:id', EmpresaController.show);
+});
 
-router.get('/empresas/search/nome/:nome', EmpresaController.showbyname);
-
-router.put('/empresas/atualizar/:id', EmpresaController.update);
-
-router.delete('/empresas/delete/:id', EmpresaController.delete);
-
-// ROTAS PERFIL
-router.post('/register/perfil', PerfilController.store);
-
-router.get('/perfis', PerfilController.index);
-
-router.get('/perfis/search/id/:id', PerfilController.show);
-
-router.get('/perfis/search/nome/:nome', PerfilController.showbyname);
-
-router.put('/perfis/atualizar/:id', PerfilController.update);
-
-router.delete('/perfis/delete/:id', PerfilController.delete);
-
-// ROTAS PROJETO
-router.post('/register/projeto', ProjetoController.store);
-
-router.post('/projeto/link', AreaController.vincularProject)
-
-router.get('/projetos', ProjetoController.index);
-
-router.get('/projeto/search/id/:id', ProjetoController.show);
-
-router.get('/projeto/search/nome/:nome', ProjetoController.showbyname);
-
-router.put('/projeto/atualizar/:id', ProjetoController.update);
-
-router.delete('/projeto/delete/:id', ProjetoController.delete);
-
-// ROTAS AREA
-router.post('/register/area', AreaController.store);
-
-router.post('/area/link/:Eid/:Aid', AreaController.vincularArea)
-
-router.get('/areas', AreaController.index);
-
-router.get('/area/search/id/:id', AreaController.show);
-
-router.get('/area/search/nome/:nome', AreaController.showbyname);
-
-router.put('/area/atualizar/:id', AreaController.update);
-
-router.delete('/area/delete/:id', AreaController.delete);
+router.use(procuranteRoutes);
+router.use(empresaRoutes);
+router.use(perfilRoutes);
+router.use(projetoRoutes);
+router.use(areaRoutes)
 
 export default router;

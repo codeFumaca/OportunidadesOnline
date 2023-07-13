@@ -45,6 +45,53 @@ class EmpresaController {
         res.json(result)
     }
 
+    async vincularProject(req, res) {
+        try {
+            const idEmpresa = req.body.Eid
+            const idProjeto = req.body.Pid
+            const result = await EmpresaRepositories.vincularProjeto(idEmpresa, idProjeto)
+            res.json(result)
+        } catch (erro) {
+            console.log('Message error: ', erro)
+            res.status(400).send({ message: erro.message })
+        }
+    }
+
+    async desvincularProject(req, res) {
+        try {
+            const idEmpresa = req.body.Eid
+            const idProjeto = req.body.Pid
+            const result = await EmpresaRepositories.desvincularProjeto(idEmpresa, idProjeto)
+            res.json(result)
+        } catch (erro) {
+            console.log('Message error: ', erro)
+            res.status(400).send({ message: erro.message })
+        }
+    }
+
+    async procurarProject(req, res) {
+        try {
+            const idEmpresa = req.params.id
+            const result = await EmpresaRepositories.findProjeto(idEmpresa)
+            res.json(result)
+        } catch (erro) {
+            console.log('Message error: ', erro)
+            res.status(400).send({ message: erro.message })
+        }
+    }
+
+    async vincularArea(req, res) {
+        const idEmpresa = req.params.Eid
+        const idArea = req.params.Aid
+        try {
+            const result = await EmpresaRepositories.vincularProjeto(idEmpresa, idArea)
+            res.json(result)
+        } catch (erro) {
+            console.log('Message error: ', erro)
+            res.status(400).send({ message: erro.message })
+        }
+    }
+
 }
 // Padrão Singleton
 export default new EmpresaController()

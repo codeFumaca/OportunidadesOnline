@@ -32,11 +32,11 @@
     "tabelas": [
         {
             "nome": "procurante",
-            "sql": "CREATE TABLE IF NOT EXISTS `bd_oportunidades_online`.`procurante` ( `id` INT NOT NULL AUTO_INCREMENT, `cpf` CHAR(11) NOT NULL, `nome` VARCHAR(45) NOT NULL, `telefone` CHAR(11) NULL, `cep` VARCHAR(45) NULL, `logradouro` VARCHAR(45) NULL, `interesses` VARCHAR(45) NULL, `pretensaoSalarial` DECIMAL(10,2) NULL, `experienciaProfissional` VARCHAR(45) NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB"
+            "sql": "CREATE TABLE IF NOT EXISTS `bd_oportunidades_online`.`procurante` ( `id` INT NOT NULL AUTO_INCREMENT, `cpf` CHAR(11) NOT NULL, `nome` VARCHAR(45) NOT NULL, `senha` VARCHAR(45) NOT NULL, `telefone` CHAR(11) NULL, `cep` VARCHAR(45) NULL, `logradouro` VARCHAR(45) NULL, `interesses` VARCHAR(45) NULL, `pretensaoSalarial` DECIMAL(10,2) NULL, `experienciaProfissional` VARCHAR(45) NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB"
         },
         {
             "nome": "empresa",
-            "sql": "CREATE TABLE IF NOT EXISTS `bd_oportunidades_online`.`empresa` ( `id` INT NOT NULL AUTO_INCREMENT, `nome` VARCHAR(45) NOT NULL, `cnpj` CHAR(14) NOT NULL, `telefone` CHAR(11) NULL, `cep` VARCHAR(45) NULL, `logradouro` VARCHAR(45) NULL, `numero` CHAR(5) NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB"
+            "sql": "CREATE TABLE IF NOT EXISTS `bd_oportunidades_online`.`empresa` ( `id` INT NOT NULL AUTO_INCREMENT, `cnpj` CHAR(14) NOT NULL, `nome` VARCHAR(45) NOT NULL, `senha` VARCHAR(45) NOT NULL, `telefone` CHAR(11) NULL, `cep` VARCHAR(45) NULL, `logradouro` VARCHAR(45) NULL, `numero` CHAR(5) NULL, PRIMARY KEY (`id`)) ENGINE = InnoDB"
         },
         {
             "nome": "area",
@@ -78,11 +78,11 @@
     "triggers": [
         {
             "nome": "procurante_AFTER_INSERT",
-            "sql": "CREATE TRIGGER `bd_oportunidades_online`.`procurante_AFTER_INSERT` AFTER INSERT ON `procurante` FOR EACH ROW BEGIN INSERT INTO perfil (imagem ,login, senha,tipo, procurante_id, empresa_id, administrador_id) VALUES (NULL, NEW.cpf, 12345, 'Procurante', NEW.id, 0, 0); END"
+            "sql": "CREATE TRIGGER `bd_oportunidades_online`.`procurante_AFTER_INSERT` AFTER INSERT ON `procurante` FOR EACH ROW BEGIN INSERT INTO perfil (imagem ,login, senha,tipo, procurante_id, empresa_id, administrador_id) VALUES (NULL, NEW.cpf, NEW.senha, 'Procurante', NEW.id, 0, 0); END"
         },
         {
             "nome": "empresa_AFTER_INSERT",
-            "sql": "CREATE TRIGGER `bd_oportunidades_online`.`empresa_AFTER_INSERT` AFTER INSERT ON `empresa` FOR EACH ROW BEGIN INSERT INTO perfil (imagem ,login, senha,tipo, procurante_id, empresa_id, administrador_id) VALUES (NULL, NEW.cnpj, 12345, 'Empresa', 0, NEW.id, 0); END "
+            "sql": "CREATE TRIGGER `bd_oportunidades_online`.`empresa_AFTER_INSERT` AFTER INSERT ON `empresa` FOR EACH ROW BEGIN INSERT INTO perfil (imagem ,login, senha,tipo, procurante_id, empresa_id, administrador_id) VALUES (NULL, NEW.cnpj, NEW.senha, 'Empresa', 0, NEW.id, 0); END "
         }
     ]
 }

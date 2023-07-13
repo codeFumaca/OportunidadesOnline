@@ -30,6 +30,26 @@ class EmpresaRepositories {
         const sql = `DELETE FROM empresa WHERE id=?;`
         return consulta(sql, id, "Não foi possível deletar esta empresa")
     }
+
+    vincularProjeto(idEmpresa, idProjeto) {
+        const sql = `INSERT INTO empresa_has_projeto (empresa_id, projeto_id) VALUES (?,?);`
+        return consulta(sql, [idEmpresa, idProjeto], "Não foi possível vincular a empresa ao projeto")
+    }
+
+    desvincularProjeto(idEmpresa, idProjeto) {
+        const sql = `DELETE FROM empresa_has_projeto WHERE empresa_id=? AND projeto_id= ?;`
+        return consulta(sql, [idEmpresa, idProjeto], "Não foi possível desvincular a empresa ao projeto")
+    }
+
+    findProjeto(idEmpresa){
+        const sql = `SELECT * FROM empresa_has_projeto WHERE empresa_id=?;`
+        return consulta(sql, idEmpresa, "A empresa não está vinculada a nenhum projeto")
+    }
+
+    vincularArea(idEmpresa, idArea) {
+        const sql = `INSERT INTO empresa_has_area SET ?;`
+        return consulta(sql, [idEmpresa, idArea], "Não foi possível vincular a empresa à area")
+    }
 }
 
 export default new EmpresaRepositories()

@@ -45,30 +45,6 @@ class AreaController {
         res.json(result)
     }
 
-    async vincularProject(req, res) {
-        try {
-            const idEmpresa = req.body.Eid
-            const idProjeto = req.body.Pid
-            const result = await AreaRepositories.vincularProjeto(idEmpresa, idProjeto)
-            res.json(result)
-        } catch (erro) {
-            console.log('Message error: ', erro)
-            res.status(400).send({ message: erro.message })
-        }
-    }
-
-    async vincularArea(req, res) {
-        const idEmpresa = req.params.Eid
-        const idArea = req.params.Aid
-        try {
-            const result = await AreaRepositories.vincularProjeto(idEmpresa, idArea)
-            res.json(result)
-        } catch (erro) {
-            console.log('Message error: ', erro)
-            res.status(400).send({ message: erro.message })
-        }
-    }
-
 }
 // Padrão Singleton
 export default new AreaController()

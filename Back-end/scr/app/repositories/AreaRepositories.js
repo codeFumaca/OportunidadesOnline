@@ -31,15 +31,6 @@ class AreaRepositories {
         return consulta(sql, id, "Não foi possível deletar esta area")
     }
 
-    vincularProjeto(idEmpresa, idProjeto) {
-        const sql = `INSERT INTO empresa_has_projeto SET ?;`
-        return consulta(sql, [idEmpresa,idProjeto], "Não foi possível vincular a empresa ao projeto")
-    }
-
-    vincularArea(idEmpresa, idArea) {
-        const sql = `INSERT INTO empresa_has_area SET ?;`
-        return consulta(sql, [idEmpresa,idArea], "Não foi possível vincular a empresa à area")
-    }
 }
 
 export default new AreaRepositories()

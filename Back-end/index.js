@@ -18,13 +18,13 @@ connection.connect(async (erro) => {
                 await executeQuery(config);
             }
 
-            console.log("Banco de dados configurado com sucesso!");
+            console.log("Banco de dados OK!");
 
             for (const tabela of queries.tabelas) {
                 await executeQuery(tabela);
             }
 
-            console.log("Tabelas iniciadas com sucesso!");
+            console.log("Tabelas OK!");
 
             for (const trigger of queries.triggers) {
                 // Verificando se o trigger já existe
@@ -37,11 +37,11 @@ connection.connect(async (erro) => {
                 } else {
                     // O trigger não existe, pode prosseguir com a criação
                     await executeQuery(trigger);
-                    console.log('Trigger criado com sucesso:', trigger.nome);
+                    console.log(`Trigger ${trigger.nome} criado com sucesso!`);
                 }
             }
 
-            console.log("Triggers iniciados com sucesso!");
+            console.log("Triggers OK!");
 
             app.listen(PORT, () => {
                 console.log(`Servidor rodando na porta ${PORT}`);

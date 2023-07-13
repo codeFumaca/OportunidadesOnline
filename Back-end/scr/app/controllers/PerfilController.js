@@ -19,12 +19,12 @@ class PerfilController {
         res.json(result)
     }
 
-    async store(req, res) { // Criar Perfil
+    /*async store(req, res) { // Criar Perfil
         const perfil = req.body;
         const result = await perfilRepositories.create(perfil)
         res.json(result)
 
-    }
+    }*/ // Desnecessário
 
     async update(req, res) { // Atualizar
         const id = req.params.id;
