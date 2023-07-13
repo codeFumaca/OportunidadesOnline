@@ -81,10 +81,33 @@ class EmpresaController {
     }
 
     async vincularArea(req, res) {
-        const idEmpresa = req.params.Eid
-        const idArea = req.params.Aid
+        const idEmpresa = req.body.Eid
+        const idArea = req.body.Aid
         try {
             const result = await EmpresaRepositories.vincularProjeto(idEmpresa, idArea)
+            res.json(result)
+        } catch (erro) {
+            console.log('Message error: ', erro)
+            res.status(400).send({ message: erro.message })
+        }
+    }
+
+    async desvincularArea(req, res) {
+        const idEmpresa = req.body.Eid
+        const idArea = req.body.Aid
+        try {
+            const result = await EmpresaRepositories.desvincularProjeto(idEmpresa, idArea)
+            res.json(result)
+        } catch (erro) {
+            console.log('Message error: ', erro)
+            res.status(400).send({ message: erro.message })
+        }
+    }
+
+    async procurarArea(req, res) {
+        try {
+            const idEmpresa = req.params.id
+            const result = await EmpresaRepositories.findProjeto(idEmpresa)
             res.json(result)
         } catch (erro) {
             console.log('Message error: ', erro)

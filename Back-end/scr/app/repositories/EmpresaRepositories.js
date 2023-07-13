@@ -41,14 +41,24 @@ class EmpresaRepositories {
         return consulta(sql, [idEmpresa, idProjeto], "Não foi possível desvincular a empresa ao projeto")
     }
 
-    findProjeto(idEmpresa){
+    findProjeto(idEmpresa) {
         const sql = `SELECT * FROM empresa_has_projeto WHERE empresa_id=?;`
         return consulta(sql, idEmpresa, "A empresa não está vinculada a nenhum projeto")
     }
 
     vincularArea(idEmpresa, idArea) {
-        const sql = `INSERT INTO empresa_has_area SET ?;`
+        const sql = `INSERT INTO empresa_has_area (empresa_id, area) VALUES (?,?);`
         return consulta(sql, [idEmpresa, idArea], "Não foi possível vincular a empresa à area")
+    }
+
+    desvincularArea(idEmpresa, idArea) {
+        const sql = `INSERT INTO empresa_has_area (empresa_id, area) VALUES (?,?);`
+        return consulta(sql, [idEmpresa, idArea], "Não foi possível vincular a empresa à area")
+    }
+
+    findArea(idEmpresa) {
+        const sql = `SELECT * FROM empresa_has_area WHERE empresa_id=?;`
+        return consulta(sql, idEmpresa, "Não foi possível vincular a empresa à area")
     }
 }
 
