@@ -13,6 +13,7 @@ import empresaRoutes from "./empresaRoutes.js";
 import perfilRoutes from "./perfilRoutes.js"
 import projetoRoutes from "./projetoRoutes.js"
 import areaRoutes from "./areaRoutes.js"
+import profissaoRoutes from "./profissaoRoutes.js"
 
 const router = Router()
 
@@ -76,10 +77,12 @@ router.post('/auth/login', async (req, res) => {
 
 });
 
+// RESGATANDO TODOS OS ROUTES E ADICIONANDO NO PRINCIPAL PARA SER LIDO PELO APP.JS ( Express )
 router.use(procuranteRoutes);
 router.use(empresaRoutes);
 router.use(perfilRoutes);
 router.use(projetoRoutes);
 router.use(areaRoutes)
+router.use(profissaoRoutes)
 
 export default router;
