@@ -17,7 +17,7 @@ class EmpresaRepositories {
     }
 
     findByName(nome) {
-        const sql = `SELECT * FROM empresa WHERE nome=?;`
+        const sql = `SELECT * FROM empresa WHERE nome LIKE '%${nome}%';`
         return consulta(sql, nome, "Nenhuma empresa apresenta o NOME informado")
     }
 

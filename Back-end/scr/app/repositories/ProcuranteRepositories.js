@@ -17,7 +17,7 @@ class ProcuranteRepositories {
     }
 
     findByName(nome) {
-        const sql = `SELECT * FROM procurante WHERE nome=?;`
+        const sql = `SELECT * FROM procurante WHERE nome LIKE '%${nome}%';`
         return consulta(sql, nome, "Nenhum procurante atribuido ao NOME informado")
     }
 

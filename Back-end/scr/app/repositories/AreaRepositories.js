@@ -17,7 +17,7 @@ class AreaRepositories {
     }
 
     findByName(nome) {
-        const sql = `SELECT * FROM area WHERE nome=?;`
+        const sql = `SELECT * FROM area WHERE nome LIKE '%${nome}%';`
         return consulta(sql, nome, "Nenhuma area apresenta o NOME informado")
     }
 

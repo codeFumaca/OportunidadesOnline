@@ -17,7 +17,7 @@ class ProjetoRepositories {
     }
 
     findByName(nome) {
-        const sql = `SELECT * FROM projeto WHERE nome=?;`
+        const sql = `SELECT * FROM projeto WHERE nome LIKE '%${nome}%';;`
         return consulta(sql, nome, "Nenhum projeto atribuido ao NOME informado")
     }
 

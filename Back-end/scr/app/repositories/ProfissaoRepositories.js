@@ -2,28 +2,28 @@ import { consulta } from "../database/connect.js"
 
 class ProfissaoRepositories { // FALTA ARRUMAR SQL
 
-    create(area) {
-        const sql = `INSERT INTO area SET ?;`
-        return consulta(sql, area, "Erro ao tentar cadastrar uma nova area")
+    create(profissao) {
+        const sql = `INSERT INTO profissao SET ?;`
+        return consulta(sql, profissao, "Erro ao tentar cadastrar uma profissao")
     }
     find() {
-        const sql = "SELECT * FROM area;";
+        const sql = "SELECT * FROM profissao;";
         return consulta(sql, "Não foi possível localizar");
     }
 
     findById(id) {
-        const sql = `SELECT * FROM area WHERE id=?;`
-        return consulta(sql, id, "Nenhuma area atribuida ao ID informado")
+        const sql = `SELECT * FROM profissao WHERE id=?;`
+        return consulta(sql, id, "Nenhuma profissao atribuida ao ID informado")
     }
 
     findByName(nome) {
-        const sql = `SELECT * FROM area WHERE nome=?;`
-        return consulta(sql, nome, "Nenhuma area apresenta o NOME informado")
+        const sql = `SELECT * FROM profissao WHERE nome LIKE %${nome}%;`
+        return consulta(sql, nome, "Nenhuma profissao apresenta o NOME informado")
     }
 
-    update(area, id) {
-        const sql = `UPDATE area SET ? WHERE id=?;`
-        return consulta(sql, [area, id], "Não foi possível atualizar a area")
+    update(profissao, id) {
+        const sql = `UPDATE profissao SET ? WHERE id=?;`
+        return consulta(sql, [profissao, id], "Não foi possível atualizar a area")
     }
 
     delete(id) {

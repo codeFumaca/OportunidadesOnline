@@ -17,7 +17,7 @@ class PerfilRepositories {
     }
 
     findByName(nome) {
-        const sql = `SELECT * FROM perfil WHERE nome=?;`
+        const sql = `SELECT * FROM perfil WHERE nome LIKE '%${nome}%';`
         return consulta(sql, nome, "Nenhum perfil atribuido ao NOME informado")
     }
 
