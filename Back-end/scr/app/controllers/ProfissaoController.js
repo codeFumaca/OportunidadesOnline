@@ -38,9 +38,9 @@ class ProfissaoController { // FALTA ARRUMAR LÓGICA
 
 
     async store(req, res) { // Criar Procurante
-        const procurante = req.body;
+        const profissao = req.body;
         try {
-            const result = await ProfissaoRepositories.create(procurante)
+            const result = await ProfissaoRepositories.create(profissao)
             res.status(201).json(result)
         } catch (erro) {
             console.log('Message error: ', erro)
@@ -50,9 +50,9 @@ class ProfissaoController { // FALTA ARRUMAR LÓGICA
 
     async update(req, res) { // Atualizar
         const id = req.params.id;
-        const procurante = req.body;
+        const profissao = req.body;
         try {
-            const result = await ProfissaoRepositories.update(procurante, id)
+            const result = await ProfissaoRepositories.update(profissao, id)
             res.status(200).json(result)
         } catch (erro) {
             console.log('Message error: ', erro.message)
