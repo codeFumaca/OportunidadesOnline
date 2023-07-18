@@ -30,6 +30,21 @@ class ProcuranteRepositories {
         const sql = `DELETE FROM procurante WHERE id=?;`
         return consulta(sql, id, "Não foi possível deletar este procurante")
     }
+
+    vincularProfissao(idProcurante, idProfissao, idArea) {
+        const sql = `INSERT INTO procurante_has_profissao (procurante_id, profissao_id, profissao_area_id) VALUES (?,?,?);`
+        return consulta(sql, [idProcurante, idProfissao, idArea], "Não foi possível vincular o procurante à Profissão")
+    }
+
+    desvincularProfissao(procurante_id, profissao_id) {
+        const sql = `DELETE FROM procurante_has_profissao WHERE procurante_id=? AND profissao_id=?;`
+        return consulta(sql, [procurante_id, profissao_id], "Não foi possível vincular o procurante à Profissão")
+    }
+
+    findProfissao(idProcurante) {
+        const sql = `SELECT * FROM procurante_has_profissao WHERE procurante_id=?;`
+        return consulta(sql, idProcurante, "Nenhuma profissão vinculado ao procurante")
+    }
 }
 
 export default new ProcuranteRepositories()

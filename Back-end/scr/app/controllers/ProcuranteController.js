@@ -1,4 +1,5 @@
 import ProcuranteRepositories from "../repositories/ProcuranteRepositories.js"
+import ProfissaoRepositories from "../repositories/ProfissaoRepositories.js"
 
 class ProcuranteController {
 
@@ -64,6 +65,45 @@ class ProcuranteController {
         const id = req.params.id;
         try {
             const result = await ProcuranteRepositories.delete(id)
+            res.status(200).json(result)
+        } catch (erro) {
+            console.log('Message error: ', erro.message)
+            res.status(400).send({ message: erro.message })
+        }
+    }
+
+    async vincularProfissao(req, res) { // Deletar
+        const idProcurante = req.body.idProcurante;
+        const idProfissao = req.body.idProfissao;
+        const IdProfissaoArea = await ProfissaoRepositories.findById(idProfissao);
+
+        try {
+            const result = await ProcuranteRepositories.vincularProfissao(idProcurante, idProfissao, IdProfissaoArea[0].area_id)
+            res.status(200).json(result)
+        } catch (erro) {
+            console.log('Message error: ', erro.message)
+            res.status(400).send({ message: erro.message })
+        }
+    }
+
+    async desvincularProfissao(req, res) { // Deletar
+        const idProcurante = req.body.idProcurante;
+        const idProfissao = req.body.idProfissao;
+        const IdProfissaoArea = ProfissaoRepositories.findById(idProfissao);
+
+        try {
+            const result = await ProcuranteRepositories.desvincularProfissao(idProcurante, idProfissao, IdProfissaoArea.area_id)
+            res.status(200).json(result)
+        } catch (erro) {
+            console.log('Message error: ', erro.message)
+            res.status(400).send({ message: erro.message })
+        }
+    }
+
+    async procurarProfissao(req, res) { // Deletar
+        const idProcurante = req.params.id;
+        try {
+            const result = await ProcuranteRepositories.findProfissao(idProcurante)
             res.status(200).json(result)
         } catch (erro) {
             console.log('Message error: ', erro.message)

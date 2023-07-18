@@ -1,6 +1,6 @@
 import ProfissaoRepositories from "../repositories/ProfissaoRepositories.js"
 
-class ProfissaoController { // FALTA ARRUMAR LÓGICA
+class ProfissaoController {
 
     async index(req, res) { // Buscar
         try {

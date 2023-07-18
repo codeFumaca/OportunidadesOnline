@@ -12,7 +12,7 @@ router.post('/empresa/projeto/unlink', EmpresaController.desvincularProject)
 
 router.post('/empresa/area/link', EmpresaController.vincularArea)
 
-router.post('/empresa/area/link', EmpresaController.desvincularArea)
+router.post('/empresa/area/unlink', EmpresaController.desvincularArea)
 
 router.get('/empresas', EmpresaController.index);
 

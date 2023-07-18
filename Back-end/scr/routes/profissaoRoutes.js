@@ -1,7 +1,7 @@
 import { Router } from "express";
 import ProfissaoController from "../app/controllers/ProfissaoController.js";
 
-const router = Router(); // FALTA ARRUMAR
+const router = Router();
 
 // ROTAS PROFISSAO
 router.post('/register/profissao/', ProfissaoController.store);

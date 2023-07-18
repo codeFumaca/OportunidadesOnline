@@ -1,6 +1,6 @@
 import { consulta } from "../database/connect.js"
 
-class ProfissaoRepositories { // FALTA ARRUMAR SQL
+class ProfissaoRepositories {
 
     create(profissao) {
         const sql = `INSERT INTO profissao SET ?;`

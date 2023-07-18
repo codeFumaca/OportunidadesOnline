@@ -84,7 +84,7 @@ class EmpresaController {
         const idEmpresa = req.body.Eid
         const idArea = req.body.Aid
         try {
-            const result = await EmpresaRepositories.vincularProjeto(idEmpresa, idArea)
+            const result = await EmpresaRepositories.vincularArea(idEmpresa, idArea)
             res.json(result)
         } catch (erro) {
             console.log('Message error: ', erro)

@@ -47,18 +47,18 @@ class EmpresaRepositories {
     }
 
     vincularArea(idEmpresa, idArea) {
-        const sql = `INSERT INTO empresa_has_area (empresa_id, area) VALUES (?,?);`
+        const sql = `INSERT INTO empresa_has_area (empresa_id, area_id) VALUES (?,?);`
         return consulta(sql, [idEmpresa, idArea], "Não foi possível vincular a empresa à area")
     }
 
     desvincularArea(idEmpresa, idArea) {
-        const sql = `INSERT INTO empresa_has_area (empresa_id, area) VALUES (?,?);`
-        return consulta(sql, [idEmpresa, idArea], "Não foi possível vincular a empresa à area")
+        const sql = `DELETE FROM empresa_has_area WHERE empresa_id=? AND area_id=?`
+        return consulta(sql, [idEmpresa, idArea], "Não foi possível desvincular a empresa à area")
     }
 
     findArea(idEmpresa) {
         const sql = `SELECT * FROM empresa_has_area WHERE empresa_id=?;`
-        return consulta(sql, idEmpresa, "Não foi possível vincular a empresa à area")
+        return consulta(sql, idEmpresa, "Não ha nenhuma área vinculada à empresa informada")
     }
 }
 
