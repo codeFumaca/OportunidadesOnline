@@ -10,7 +10,6 @@ class VagaController {
             console.log('Message error: ', erro)
             res.status(400).send({ message: erro.message })
         }
-
     }
 
     async show(req, res) { // Buscar por id
@@ -26,8 +25,8 @@ class VagaController {
     }
 
     async store(req, res) { // Criar Procurante
-        const area = req.body;
-        const result = await VagaRepositories.create(area)
+        const vaga = req.body;
+        const result = await VagaRepositories.create(vaga)
         res.json(result)
 
     }
@@ -42,6 +41,20 @@ class VagaController {
     async delete(req, res) { // Deletar
         const id = req.params.id;
         const result = await VagaRepositories.delete(id)
+        res.json(result)
+    }
+
+    async addprocurante(req, res) { // Deletar
+        const idvaga = req.params.id;
+        const idprocurante = req.body;
+        const result = await VagaRepositories.addProcurante(idvaga,idprocurante)
+        res.json(result)
+    }
+    
+    async removeprocurante(req, res) { // Deletar
+        const id = req.params.id;
+        const idprocurante = req.body;
+        const result = await VagaRepositories.removeProcurante(id,idprocurante)
         res.json(result)
     }
 
