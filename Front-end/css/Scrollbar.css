@@ -1,0 +1,22 @@
+/* Estilizando a barra de rolagem */
+/* Largura e cor da barra */
+::-webkit-scrollbar {
+    width: 10px; /* Largura da barra */
+  }
+  
+  /* Fundo da barra */
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  
+  /* Cor da alça (thumb) da barra */
+  ::-webkit-scrollbar-thumb {
+    background-color: #4040ff;
+    border-radius: 5px; /* Cantos arredondados */
+  }
+  
+  /* Mudança de cor quando hover na alça (thumb) */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
