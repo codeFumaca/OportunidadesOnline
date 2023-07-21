@@ -22,8 +22,16 @@
     background-color: #F2F2F2;
     padding-top: 5rem;
     padding-bottom: 10rem;
+    background-image: url(./assets/image/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
   }
   
+.header-main a{
+  color: white;
+}
+
 .header-circles {
     display: flex;
     justify-content: center;
@@ -79,11 +87,27 @@
 }
 
 .seach-bar button{
-  color: white;
-  background-color: #292D32;
+  color: #292D32;
+  background-color: white;
   border-radius: 10rem;
   padding: 0.4rem;
 
+}
+
+.seach-bar{
+  position: relative;
+}
+
+.seach-bar i{
+  color: black;
+  position: absolute;
+  top: 8px;
+  margin-left: 1rem;
+  
+}
+
+.seach-bar input{
+  background-color: white;
 }
 
 .seach-bar button:hover{

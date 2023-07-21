@@ -1,3 +1,7 @@
+*{
+  text-decoration: none;
+}
+
 .footer-info img{
     width: 5rem;
     height: 3rem;
