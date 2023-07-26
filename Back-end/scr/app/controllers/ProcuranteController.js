@@ -1,5 +1,4 @@
 import ProcuranteRepositories from "../repositories/ProcuranteRepositories.js"
-import ProfissaoRepositories from "../repositories/ProfissaoRepositories.js"
 
 class ProcuranteController {
 
