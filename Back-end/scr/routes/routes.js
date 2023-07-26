@@ -1,8 +1,5 @@
 import { Router } from "express";
 import { join } from 'path';
-import { eAdmin } from "../app/middlewares/auth.js";
-import bcrypt from "bcryptjs"
-import jwt from "jsonwebtoken"
 
 //Importando funções
 import { sendHtmlFile } from "../app/functions/sendHtmlFile.js";
@@ -33,48 +30,9 @@ router.get('/login', async (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE 
     sendHtmlFile(res, filePath);
 });
 
-router.get('/dashboard', eAdmin, async (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE DASHBOARD AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
+router.get('/dashboard', async (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE DASHBOARD AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
     const filePath = join('../', 'Front-end', 'dashboard.html');
     sendHtmlFile(res, filePath);
-});
-
-// ROTAS AUTH
-router.post('/auth/registrar', async (req, res) => {
-    const senha = await bcrypt.hash(req.body.senha, 8)
-
-    console.log(senha);
-    return res.status(200).json({
-        mensagem: "Tudo ok"
-    })
-
-})
-
-router.post('/auth/login', async (req, res) => {
-    if (req.body.login != "fakecrazzyy@hotmail.com") {
-        return res.status(400).json({
-            erro: true,
-            mensagem: "Usuário ou senha incorreta"
-        });
-    }
-
-    if (!(await bcrypt.compare(req.body.senha, "$2a$08$hGCtuN8zmNziEPjMhOhsnezC6HVWcPWo0cCyb2vGAdm/CIze7Y4mG"))) {
-        return res.status(400).json({
-            erro: true,
-            mensagem: "Usuário ou senha incorreta"
-        });
-    }
-
-    var token = jwt.sign({id: 1}, "AISNNS3702050SASNO247249241LKISANPPQ", {
-        //expiresIn: 600 // 10 minutos
-        expiresIn: '1d'
-    })
-
-    return res.json({
-        erro: false,
-        mensagem: "Login realizado com sucesso!",
-        token
-    })
-
 });
 
 // RESGATANDO TODOS OS ROUTES E ADICIONANDO NO PRINCIPAL PARA SER LIDO PELO APP.JS ( Express )
