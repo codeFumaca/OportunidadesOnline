@@ -27,7 +27,7 @@
         <img src="https://avatars.githubusercontent.com/u/103221094?v=4" width="100px;" alt="Foto João"/><br>
           <b>João Gabriel</b>
       </a>
-    <td align="center"><p>- Levantamento de Requisitos</p><p>- Desenvolvimento Front-End</p><p>- Desenvolvimento do Banco de Dados</p></td>
+    <td align="center"><p>- Levantamento de Requisitos</p><p>- Desenvolvimento Front-End</p><p>- Desenvolvimento do Banco de Dados</p><p>- - Desenvolvimento da Documentação</p></td>
   </tr>
   <tr>
     </th>
@@ -36,7 +36,7 @@
         <img src="https://avatars.githubusercontent.com/u/62085081?v=4" width="100px;" alt="Foto Eduardo"/><br>
           <b>Eduardo Lopes</b>
       </a>
-  <td align="center"><p>- Desenvolvimento Back-End</p><p>- Desenvolvimento Front-End</p><p>- Desenvolvimento do Banco de Dados</p></td>
+  <td align="center"><p>- Desenvolvimento Back-End</p><p>- Desenvolvimento da Documentação</p><p>- Desenvolvimento do Banco de Dados</p></td>
     </th>
     </tr>
     <tr>
@@ -45,7 +45,7 @@
         <img src="https://avatars.githubusercontent.com/u/90388770?v=4" width="100px;" alt="Foto Fabrício"/><br>
           <b>Fabrício Luís</b>
       </a>
-      <td align="center"><p>- Desenvolvimento Front-End</p></td>
+      <td align="center"><p>- Desenvolvimento Front-End</p><p>- Design do Front-End</p></td>
     </th>
   </tr>
   <tr>
@@ -54,6 +54,6 @@
         <img src="https://avatars.githubusercontent.com/u/132108401?v=4" width="100px;" alt="Foto Robert"/><br>
           <b>Robert Braz</b>
       </a>
-      <td align="center"><p>- Desenvolvimento do Banco de Dados</p></td>
+      <td align="center"><p>- Desenvolvimento do Banco de Dados</p><p>- Desenvolvimento da Documentação</p></td>
   </tr>
 </table>

@@ -7,9 +7,10 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Levantamento de Requistos
-- [ ] Criação doCriação do Banco de Dados
-- [ ] Criação do Front-END
-- [ ] Criação do Back-END
+- [x] Criação do Criação do Banco de Dados
+- [x] Criação do Front-END
+- [x] Criação do Back-END
+- [ ] Primeira atualização Geral
 
 ## 📫 Contribuindo para OportunidadesOnline
 
