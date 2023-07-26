@@ -1,5 +1,5 @@
 
-## Usuários 👤
+## 👤 Usuários
 <table>
   <tr>
     <th align="center">
@@ -9,7 +9,7 @@
   </tr>
   <tr>
     <td align="center">
-      Usuário
+      Procurante
     </td>
      <td align="center">
       Empresas
@@ -28,9 +28,9 @@
           <b>João Gabriel</b>
       </a>
     <td align="center"><p>- Levantamento de Requisitos</p><p>- Desenvolvimento Front-End</p><p>- Desenvolvimento do Banco de Dados</p><p>- - Desenvolvimento da Documentação</p></td>
+    </th>
   </tr>
   <tr>
-    </th>
     <th align="center">
       <a href="https://github.com/codeFumaca" title="Github Page">
         <img src="https://avatars.githubusercontent.com/u/62085081?v=4" width="100px;" alt="Foto Eduardo"/><br>
@@ -56,4 +56,22 @@
       </a>
       <td align="center"><p>- Desenvolvimento do Banco de Dados</p><p>- Desenvolvimento da Documentação</p></td>
   </tr>
+  <tr>
+    <th align="center">
+      <a href="https://github.com/renan1939" title="Github Page">
+        <img src="https://avatars.githubusercontent.com/u/115194052?v=4" width="100px;" alt="Foto Renan"/><br>
+          <b>Renan Santos</b>
+      </a>
+  <td align="center"><p>- Desenvolvimento da Documentação</p><p>- Desenvolvimento do Banco de Dados</p></td>
+    </th>
+    </tr>
+    <tr>
+    <th align="center">
+      <a href="https://github.com/MateusMarquesDias" title="Github Page">
+        <img src="https://avatars.githubusercontent.com/u/103127371?v=4" width="100px;" alt="Foto Mateus"/><br>
+          <b>Renan Santos</b>
+      </a>
+  <td align="center"><p>- Desenvolvimento do Back-End</p></td>
+    </th>
+    </tr>
 </table>
