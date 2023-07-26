@@ -33,7 +33,7 @@ router.get('/login', async (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE 
     sendHtmlFile(res, filePath);
 });
 
-router.get('/dashboard', eAdmin, async (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE LOGIN AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
+router.get('/dashboard', eAdmin, async (req, res) => {// SOLICITA OS ARQUIVOS DA PÁGINA DE DASHBOARD AO SERVIDOR, QUE RETORNA O ARQUIVO HTML DA PÁGINA.
     const filePath = join('../', 'Front-end', 'dashboard.html');
     sendHtmlFile(res, filePath);
 });
